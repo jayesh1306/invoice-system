@@ -22,7 +22,7 @@
     "json2xls": "^0.1.2",
     "jsonexport": "^2.4.1",
     "mongo-xlsx": "^1.0.12",
-    "mongoose": "^5.4.1",
+    "mongoose": "^5.7.5",
     "num-words": "^1.0.1",
     "number-to-words": "^1.2.4",
     "passport": "^0.4.0",
