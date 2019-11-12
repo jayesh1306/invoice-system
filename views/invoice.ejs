@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        body {
+            background-color: grey;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        .container-fluid {
+            max-height: 1400px;
+            background-color: white;
+            box-shadow: 1px 0px 25px black
+        }
+
+        address {
+            font-size: 20px
+        }
+
+        td {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body onload="window.print()">
+    <div class="container-fluid" style=" height: 1400px;">
+        <div class=" row">
+            <div class="col-md- mt-5">
+                <img src="/images/main.png" width="200" height="230" alt="" srcset="">
+            </div>
+            <div class="col-md-8 text-left ml-5" style="margin-top:70px">
+                <h3>
+                    <p class="mt-5"><b>Sangam Educational Services</b></p> <br>
+                    <p style="margin-top: -25px">Hesarghatta Main Rd, </p><br>
+                    <p style="margin-top: -25px"> Bengaluru - 560073 </p>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <address>
+                            <strong>Billed To:</strong><br>
+                            <%= data.customer %>
+                        </address>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <address>
+                            <strong>Payment Method:</strong><br>
+                            Cash<br>
+                            ssdprintpro@gmail.com
+                        </address>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <address>
+                            <strong>Order Date:</strong><br>
+                            <%= data.date %><br><br>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Item</strong></td>
+                                        <td class="text-center"><strong>Price</strong></td>
+                                        <td class="text-center"><strong>Quantity</strong></td>
+                                        <td class="text-right"><strong>Totals</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                    <%for (var i=0;i< length ;i++){%>
+                                    <tr>
+                                        <td><%= items[i] %></td>
+                                        <td class="text-center">₹ <%= data.rate[i] %>/-</td>
+                                        <td class="text-center"><%= data.quantity[i] %></td>
+                                        <td class="text-right">₹ <%= data.quantity[i] * data.rate[i] %>/-</td>
+                                    </tr>
+                                    <%}%>
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-center">Total</td>
+                                        <td class="text-right">₹ <%= total %>/-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ml-4">
+                    <h4>Thanks for your business</h4>
+                    <p>Terms & Conditions.</p>
+                    <p style="margin-top: -15px">Cheque Should be Issued in the Name of Kalyan Kumar D M</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-right" style="margin-top: 80px ">
+                <p style="font-size: 25px;margin-right: 25px">Authorized Signature</p>
+            </div>
+        </div>
+</body>
+
+</html>
+<!------ Include the above in your HEAD tag ---------->

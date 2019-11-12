@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Customer</title>
+</head>
+
+<body>
+    <div class="container">
+        <% include includes/nav.ejs %>
+        <div class="row">
+            <div class="col-md-6 offset-md-3"><br>
+                <h2>Add Customer </h2>
+                <hr>
+                <div class="alert alert-danger alert-dismissible">
+                    <%= message %>
+                </div>
+                <form action="/dashboard/addCustomer" method="post">
+                    <div class="form-group">
+                        <label for="name">Customer Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address1">Address Line 1</label>
+                        <input type="text" name="add1" min="0" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address2">Address Line 2</label>
+                        <input type="text" name="add2" min="0" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address3">Address Line 3 </label>
+                        <input type="text" name="add3" min="0" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
